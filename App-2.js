@@ -25,7 +25,8 @@ export default function app() {
         console.log('hi')
     }
     return(
-        <View style={{paddingHorizontal:20,paddingVertical:50,flex:1,backgroundColor:'#A7727D'}} >
+        <View style={{paddingHorizontal:10,paddingVertical:50,flex:1,backgroundColor:'#A7727D'}} >
+            <Text style={{color:'#fff',fontWeight:'600',fontSize:50,textAlign:'center',marginVertical:10,fontFamily:'serif'}}>TO-DO LIST</Text>
            <View style={{flexDirection:'row',justifyContent:'space-between',flex:1,marginHorizontal:10,alignItems:'center'}}>
               <TextInput placeholder='Write your goals' style={style.textinput} onChangeText={getgoals} />
               <Button title='Add Goal' onPress={addgoals} />
@@ -41,10 +42,12 @@ export default function app() {
            )}
            </ScrollView> */}
 
-           <FlatList data={goalsarray} renderItem={(itemdata)=>{
+           <FlatList data={goalsarray}    renderItem={(itemdata)=>{
+            
             return(
+                
                 <View style={{borderRadius:'25%',margin:5}} onPress={this.delet} >
-                <Text style={{fontSize: 20,color:'#ffffff',fontWeight:'300'}}>{itemdata.index+=1 }. { itemdata.item}
+                <Text style={{fontSize: 20,color:'#ffffff',fontWeight:'300',fontFamily:'Roboto'}}>{itemdata.index+=1 }. { itemdata.item}
                 </Text>
                 </View>
             )
@@ -70,7 +73,8 @@ const style = StyleSheet.create({
      fontSize:15,
      color:'#282A3A',
      padding:10,
-     fontWeight:'500'
+     fontWeight:'500',
+     borderRadius:10
     }
 
 })
